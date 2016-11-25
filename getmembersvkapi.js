@@ -1,5 +1,4 @@
 $(document).ready(function() {
-  var promise = new Promise( (resolve, reject) => {
     VK.init({
       apiId: 5745999 // ID вашего приложения VK
     });
@@ -39,16 +38,10 @@ $(document).ready(function() {
             setTimeout(function() { getMembers20k(group_id, members_count); }, 333); // задержка 0.333 с. после чего запустим еще раз
           else // если конец то
             alert('Ура тест закончен! В массиве membersGroups теперь ' + membersGroups.length + ' элементов.');
+            console.log(membersGroups);
         } else {
           alert(data.error.error_msg); // в случае ошибки выведем её
         }
       });
     }
-    reslove(membersGroups);
-  });
-
-  promise
-    .then((result) => {
-      console.log(result);
-    });
 });
