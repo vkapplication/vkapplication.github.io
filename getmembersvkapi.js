@@ -32,7 +32,7 @@ $(document).ready(function() {
 
       VK.Api.call("execute", {code: code}, function(data) {
         if (data.response) {
-          membersGroups = membersGroups.concat(JSON.parse("[{" + data.response + "}]")); // запишем это в массив
+          membersGroups = membersGroups.concat(JSON.parse(data.response)); // запишем это в массив
           $('.member_ids').html('Загрузка: ' + membersGroups.length + '/' + members_count);
           if (members_count >  membersGroups.length) // если еще не всех участников получили
             setTimeout(function() { getMembers20k(group_id, members_count); }, 333); // задержка 0.333 с. после чего запустим еще раз
