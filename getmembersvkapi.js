@@ -39,7 +39,7 @@ $(document).ready(function() {
             setTimeout(function() { getMembers20k(group_id, members_count); }, 333); // задержка 0.333 с. после чего запустим еще раз
           else // если конец то
             alert('Ура тест закончен! В массиве membersGroups теперь ' + membersGroups.length + ' элементов.');
-            console.log(membersGroups);
+            // console.log(membersGroups);
         } else {
           alert(data.error.error_msg); // в случае ошибки выведем её
         }
