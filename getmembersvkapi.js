@@ -20,7 +20,7 @@ $(document).ready(function() {
     }
 
     function getMembers20k(group_id, members_count) {
-      var code =  'var members = API.groups.getMembers({"group_id": ' + group_id + ', "v": "5.27", "sort": "id_asc", "count": "3", "offset": ' + membersGroups.length + '}).items;'
+      var code =  'var members = API.groups.getMembers({"group_id": ' + group_id + ', "v": "5.27", "sort": "id_asc", "count": "3", "fields": "bdate", "offset": ' + membersGroups.length + '}).items;'
           + 'return members;'; // вернуть массив members
 
       VK.Api.call("execute", {code: code}, function(data) {
