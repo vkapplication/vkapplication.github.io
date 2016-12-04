@@ -32,7 +32,7 @@ $(document).ready(function() {
 
       VK.Api.call("execute", {code: code}, function(data) {
         if (data.response) {
-          console.log("ASDSA" + JSON.parse("[" + data.response + "]"));
+          console.log("ASDSA" + JSON.parse("[" + data.response.items + "]"));
           membersGroups = membersGroups.concat(JSON.parse("[" + data.response + "]")); // запишем это в массив
           $('.member_ids').html('Загрузка: ' + membersGroups.length + '/' + members_count);
           if (members_count >  membersGroups.length) // если еще не всех участников получили
